@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AFirması GPS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Fonts-->
+    <link rel="stylesheet" type="text/css" href="../static/assets/fonts/fontawesome/font-awesome.min.css">
+    <!-- Vendors-->
+    <link rel="stylesheet" type="text/css" href="../static/assets/vendors/bootstrap/grid.css">
+    <link rel="stylesheet" type="text/css" href="../static/assets/vendors/magnific-popup/magnific-popup.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/assets/vendors/swiper/swiper.css">
+    <link rel="stylesheet" type="text/css" href="../static/assets/vendors/wow/animate.css">
+    <!-- App & fonts-->
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Montserrat:400,700">
+    <link rel="stylesheet" type="text/css" id="app-stylesheet" href="../static/assets/css/main.css">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<div class="page-wrap" id="root">
+
+    <!-- header -->
+    <header class="header header--fixed">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo"><a href="{{ url_for('home') }}">AFirması GPS</a></div>
+                <div class="header__menu">
+
+                    <!-- onepage-nav -->
+                    <nav class="onepage-nav">
+
+                        <!-- onepage-menu -->
+                        <ul class="onepage-menu">
+                            <li class="current-menu-item"><a href="#id-1">Anasayfa</a>
+                            </li>
+                            <li><a href="#id-2">Hakkımızda</a>
+                            </li>
+                            <li><a href="#id-3">Hizmetlerimiz</a>
+                            </li>
+                            <li><a href="#id-4">Ürünler</a>
+                            </li>
+                            <li><a href="#id-5">Blog</a>
+                            </li>
+                            <li><a href="#id-6">İletişim</a>
+                            </li>
+
+                            {% if current_user.is_authenticated %}
+                                <li><a href="{{ url_for('map') }}" class="smoothScroll">Araçlarınız</a></li>
+                            {% endif %}
+
+                            {% if current_user.is_authenticated %}
+                                <li><a href="{{ url_for('logout') }}" class="smoothScroll">Çıkış</a></li>
+                            {% else %}
+                                <li><a href="{{ url_for('login') }}" class="smoothScroll">Giriş</a></li>
+                            {% endif %}
+
+                        </ul><!-- onepage-menu -->
+
+                        <div class="navbar-toggle"><span></span><span></span><span></span></div>
+                    </nav><!-- End / onepage-nav -->
+
+                </div>
+            </div>
+        </div>
+    </header><!-- End / header -->
+
+    <!-- Content-->
+    <div class="awe-content">
+
+        <!-- hero -->
+        <section class="hero awe-text-center" id="id-1">
+            <div class="awe-overlay"></div>
+            <div class="hero__wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-2 ">
+                            <h1 class="hero__title">Saniyeler İçinde İzlemeye Başlayın!
+                            </h1>
+                            <p class="hero__text"> Gerçek zamanlı olarak araç takibi ve filo yönetimi için geliştirilmiş
+                                ve tasarlanmış GPS/GPRS teknolojisi. Motorsikletler de dahil...</p><a
+                                class="a-btn btn-first" href="#">Daha Fazlası</a><a class="a-btn btn-second"
+                                                                                    href="#id-3">Hizmetlerimiz...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section><!-- End / hero -->
+
+
+        <!-- Section -->
+        <section class="awe-section awe-text-center paragraph bg-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-2 ">
+                        <p class="fz-22"> Firmanız diğer firmalara araç lokasyon hizmeti sunarak aylık ücretler
+                            kazanmaya başlayacaktır. Yatırım Getirisi (ROI) yılda %110'dur. Her cihaza yapılan yatırım
+                            <strong> 3 ayda </strong> geri kazanılır. Bundan sonra kazançlar yükselmeye başlar. Yazılım
+                            maliyeti, 50 müşteriye sahip olunarak 3 ayda ödenecektir.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End / Section -->
+
+
+        <!-- Section -->
+        <section class="awe-section" id="id-2">
+            <div class="container">
+                <div class="row">
+
+                    <!-- title -->
+                    <div class="title">
+                        <h2 class="title__title"> Biz AFirması GPS Ailesiyiz!
+                            <p class="title__text"> Ürünlerimizden Haberdar Olmak İçin Takipte Kalın... </p>
+                        </h2>
+                    </div><!-- End / title -->
+
+
+                    <!-- about -->
+                    <div class="about">
+                        <div class="col-lg-6 ">
+                            <div class="about__words">
+                                <h2 class="fw-600 fz-30">Hakkımızda Duyduklarınızı Pekiştirmek İçin...</h2>
+                                <p>AFirması Gps, GPS izleme cihazları ve yazılım geliştirme tedarikçisidir. Filo konumu
+                                    ve kişisel güvenlik için araç takip teknolojisi ihraç ediyoruz. Firmamız kamyon,
+                                    kamyonet, otomobil veya motosiklet gibi araç filosu için lokasyon çözümleri
+                                    sunmaktadır. Kişisel takip, güvenlik görevlileri, makineler, mallar da dahil.</p>
+                                <p>Şirketimiz, rekabetçi ürünler ve çözümler yaratmak için araştırma ve geliştirme
+                                    alanlarına güçlü bir şekilde yatırım yapmaktadır. Ürünlerimiz şu anda 100'den fazla
+                                    ülkede bulunmaktadır. AFirması Gps, 2022 yılında en iyi ihracatçı şirket olarak
+                                    ödüllendirildi ve dünya çapındaki GPS World dergisi tarafından ilk 50 lider
+                                    şirketten biri seçildi.</p><a class="a-btn" href="{{ url_for('map') }}">Göz Atın</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 ">
+                            <div class="about__img"><img
+                                    src="https://www.istartek.com/wp-content/uploads/2020/01/4G-GPS-Tracker.jpg"/></div>
+                        </div>
+                    </div><!-- End / about -->
+
+                </div>
+            </div>
+        </section>
+        <!-- End / Section -->
+
+
+        <!-- Section -->
+        <section class="awe-section bg-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 ">
+
+                        <!-- progress -->
+                        <div class="progress">
+                            <h5 class="progress__title">iTrackPRO TAŞINABİLİR Memnun Kalma Oranı</h5>
+                            <div class="progress__wrap">
+                                <div class="progress__bar" data-progress-percent="98" data-timing="ease"
+                                     data-duration="1000" data-delay="500"><span class="progress__number">92%</span>
+                                </div>
+                            </div>
+                        </div><!-- End / progress -->
+
+
+                        <!-- progress -->
+                        <div class="progress">
+                            <h5 class="progress__title">iTrackPRO ARABA Memnun Kalma Oranı</h5>
+                            <div class="progress__wrap">
+                                <div class="progress__bar" data-progress-percent="93" data-timing="ease"
+                                     data-duration="1000" data-delay="500"><span class="progress__number">84%</span>
+                                </div>
+                            </div>
+                        </div><!-- End / progress -->
+
+                    </div>
+                    <div class="col-lg-6 ">
+
+                        <!-- progress -->
+                        <div class="progress">
+                            <h5 class="progress__title">iTrackPRO AVCI Memnun Kalma Oranı</h5>
+                            <div class="progress__wrap">
+                                <div class="progress__bar" data-progress-percent="95" data-timing="ease"
+                                     data-duration="1000" data-delay="500"><span class="progress__number">90%</span>
+                                </div>
+                            </div>
+                        </div><!-- End / progress -->
+
+
+                        <!-- progress -->
+                        <div class="progress">
+                            <h5 class="progress__title">iTrackPRO VLogic Memnun Kalma Oranı</h5>
+                            <div class="progress__wrap">
+                                <div class="progress__bar" data-progress-percent="92" data-timing="ease"
+                                     data-duration="1000" data-delay="500"><span class="progress__number">84%</span>
+                                </div>
+                            </div>
+                        </div><!-- End / progress -->
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End / Section -->
+
+
+        <!-- Section -->
+        <section class="awe-section">
+            <div class="container">
+
+                <!-- title -->
+                <div class="title">
+                    <h2 class="title__title">Nelere Yatırım Yapmalısınız?
+                        <p class="title__text">AFirması Yatırım Size EN iyi ürünü bulma garantisi veriyor. Peki o
+                            hangisi?</p>
+                    </h2>
+                </div><!-- End / title -->
+
+
+                <!-- tabs__module -->
+                <div class="tabs__module" data-options="{}">
+                    <ul class="ac-tab__nav clearfix">
+                        <li><a href="#tab1"><i class="fa fa-laptop"></i><span class="ac-tab__title">iTrackPRO TAŞINABİLİR</span></a>
+                        </li>
+                        <li><a href="#tab2"><i class="fa fa-code"></i><span class="ac-tab__title">iTrackPRO ARABA</span></a>
+                        </li>
+                        <li><a href="#tab3"><i class="fa fa-camera"></i><span class="ac-tab__title"></span>iTrackPRO
+                            AVCI</a></li>
+                        <li><a href="#tab4"><i class="fa fa-phone"></i><span class="ac-tab__title"></span>iTrackPRO
+                            VLogic</a></li>
+                    </ul>
+                    <div class="ac-tab__content">
+
+                        <!-- ac-tab__panel -->
+                        <div class="ac-tab__panel" id="tab1">
+                            <div class="col-lg-4 ">
+                                <div><img src="../static/assets/img/skill/skill-1.png"/></div>
+                            </div>
+                            <div class="col-lg-8 ">
+                                <p class="tab_panel__content">iTrackPro TAŞINABİLİR, gerçek zamanlı olarak insan takibi
+                                    ve konumu için özel olarak geliştirilmiş ve tasarlanmış GPS/GPRS teknolojisine
+                                    dayalı bir sistemdir.</p><a class="a-btn style-2" href="#">Daha Fazlası</a>
+                            </div>
+                        </div><!-- End / ac-tab__panel -->
+
+
+                        <!-- ac-tab__panel -->
+                        <div class="ac-tab__panel" id="tab2">
+                            <div class="col-lg-4 ">
+                                <div><img src="../static/assets/img/skill/skill-2.jpg"/></div>
+                            </div>
+                            <div class="col-lg-8 ">
+                                <p class="tab_panel__content">iTrackPro ARABA, gerçek zamanlı olarak motosiklet takibi
+                                    ve konumu için özel olarak geliştirilmiş ve tasarlanmış GPS/GPRS teknolojisine
+                                    dayalı bir sistemdir.</p><a class="a-btn style-2" href="#">Read More</a>
+                            </div>
+                        </div><!-- End / ac-tab__panel -->
+
+
+                        <!-- ac-tab__panel -->
+                        <div class="ac-tab__panel" id="tab3">
+                            <div class="col-lg-4 ">
+                                <div><img src="../static/assets/img/skill/skill-1.png"/></div>
+                            </div>
+                            <div class="col-lg-8 ">
+                                <p class="tab_panel__content">iTrackPro AVCI, gerçek zamanlı olarak araç takibi ve filo
+                                    yönetimi için geliştirilmiş ve tasarlanmış GPS/GPRS teknolojisine dayalı bir
+                                    sistemdir. Doğru konum verilerinin alınmasına ve bilgileri önceden yapılandırılmış
+                                    sunucuya veya cep telefonuna göndermek için GSM modülünü kullanmasına izin veren bir
+                                    GPS modülüne sahiptir. Dahili hafızası, GPRS kapsama alanı olmadığında veya
+                                    kullanıcı tarafından konfigüre edilen zaman aralıklarında GPS koordinatlarının
+                                    saklanmasına izin verir.</p><a class="a-btn style-2" href="#">Read More</a>
+                            </div>
+                        </div><!-- End / ac-tab__panel -->
+
+
+                        <!-- ac-tab__panel -->
+                        <div class="ac-tab__panel" id="tab4">
+                            <div class="col-lg-4 ">
+                                <div><img src="../static/assets/img/skill/skill-3.png"/></div>
+                            </div>
+                            <div class="col-lg-8 ">
+                                <p class="tab_panel__content">iTrackPro VLOGIC, gerçek zamanlı olarak insan takibi ve
+                                    konumu için özel olarak geliştirilmiş ve tasarlanmış GPS/GPRS teknolojisine dayalı
+                                    bir sistemdir.</p><a class="a-btn style-2" href="#">Read More</a>
+                            </div>
+                        </div><!-- End / ac-tab__panel -->
+
+                    </div>
+                </div><!-- End / tabs__module -->
+
+            </div>
+        </section>
+        <!-- End / Section -->
+
+
+        <!-- Section -->
+        <section class="awe-section" style="background-image:url('../static/assets/img/bg/video.jpg');">
+            <div class="awe-overlay"></div>
+            <div class="container-fluid">
+
+                <!-- video -->
+                <div class="video"><a class="video__bg popup-video" href="https://www.youtube.com/watch?v=YjhrligRTbE"
+                                      data-effect="mfp-zoom-in">
+                    <div class="video__icon"><i class="fa fa-play"></i></div>
+                </a>
+                </div><!-- End / video -->
+
+            </div>
+        </section>
+        <!-- End / Section -->
+
+
+        <!-- Section -->
+        <section class="awe-section" id="id-3">
+            <div class="container">
+
+                <!-- title -->
+                <div class="title">
+                    <h2 class="title__title"><span class='first'>Biz Neyiz?</span><br/>Hizmetlerimiz
+                        <p class="title__text"></p>
+                    </h2>
+                </div><!-- End / title -->
+
+                <div class="col-lg-4 ">
+
+                    <!-- service -->
+                    <div class="service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="20"
+                         data-wow-iteration="1">
+                        <div class="service__icon"><i class="fa fa-sign-out"></i></div>
+                        <h3 class="service__title">GSM</h3>
+                        <p class="service__text">GSM ve GPRS ile Uzaktan</p>
+                    </div><!-- End / service -->
+
+                </div>
+                <div class="col-lg-4 ">
+
+                    <!-- service -->
+                    <div class="service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="20"
+                         data-wow-iteration="1">
+                        <div class="service__icon"><i class="fa fa-euro"></i></div>
+                        <h3 class="service__title">KÜRESEL</h3>
+                        <p class="service__text">Gerçek zamanlı Dinamik Rapor</p>
+                    </div><!-- End / service -->
+
+                </div>
+                <div class="col-lg-4 ">
+
+                    <!-- service -->
+                    <div class="service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6000000000000001s"
+                         data-wow-offset="20" data-wow-iteration="1">
+                        <div class="service__icon"><i class="fa fa-play-circle"></i></div>
+                        <h3 class="service__title">AŞIRI HIZ</h3>
+                        <p class="service__text">Aşırı hız uyarısı</p>
+                    </div><!-- End / service -->
+
+                </div>
+                <div class="col-lg-4 ">
+
+                    <!-- service -->
+                    <div class="service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.8s" data-wow-offset="20"
+                         data-wow-iteration="1">
+                        <div class="service__icon"><i class="fa fa-clone"></i></div>
+                        <h3 class="service__title">COĞRAFİ SINIR</h3>
+                        <p class="service__text">Yapılandırılmış bir bölgeden çıkış </p>
+                    </div><!-- End / service -->
+
+                </div>
+                <div class="col-lg-4 ">
+
+                    <!-- service -->
+                    <div class="service wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" data-wow-offset="20"
+                         data-wow-iteration="1">
+                        <div class="service__icon"><i class="fa fa-drivers-license-o"></i></div>
+                        <h3 class="service__title">VERİ KAYDEDİCİ</h3>
+                        <p class="service__text">Konum veri depolama</p>
+                    </div><!-- End / service -->
+
+                </div>
+                <div class="col-lg-4 ">
+
+                    <!-- service -->
+                    <div class="service wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.2000000000000002s"
+                         data-wow-offset="20" data-wow-iteration="1">
+                        <div class="service__icon"><i class="fa fa-rouble"></i></div>
+                        <h3 class="service__title">DÖRT BANTLI</h3>
+                        <p class="service__text">850/900/1800/1900</p>
+                    </div><!-- End / service -->
+
+                </div>
+            </div>
+        </section>
+        <!-- End / Section -->
+
+
+        <!-- Section -->
+        <section class="awe-section why bg-gray pd-0">
+            <div class="back"></div>
+            <div class="container-fluid pd-0">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-6 col-lg-offset-6 ">
+                    <div class="box">
+
+                        <!-- title -->
+                        <div class="title title__left">
+                            <h2 class="title__title"><span class='first'>Yenilikçi Teknoloji</span> <br/>Bizi Neden
+                                Seçmelisiniz?
+                                <p class="title__text"></p>
+                            </h2>
+                        </div><!-- End / title -->
+
+                        <p> Eksiksiz bir araç ve kişisel takip çözümü sunuyoruz. Bu, yeni bir iş oluşturmanıza olanak
+                            tanır: üçüncü taraflara izleme hizmetleri sunmanıza ve araçlarını bir web tarayıcısı
+                            aracılığıyla gerçek zamanlı olarak izlemelerine izin vermek için aylık ücret talep etmenize
+                            olanak tanır. Hırsızlık durumunda motor uzaktan durdurulabilir. Cihazlarımız yüksek kaliteli
+                            ve son derece güvenilirdir. </p>
+                        <div class="col-lg-6 ">
+
+                            <!-- service -->
+                            <div class="service">
+                                <div class="service__icon"><i class="fa fa-plus-square"></i></div>
+                                <h3 class="service__title">Yatırım</h3>
+                                <p class="service__text">Her cihaza yapılan yatırım 3 ayda geri kazanılır. Yazılım
+                                    maliyeti, 50 müşteriye sahip olunarak 3 ayda ödenecektir.</p>
+                            </div><!-- End / service -->
+
+                        </div>
+                        <div class="col-lg-6 ">
+
+                            <!-- service -->
+                            <div class="service">
+                                <div class="service__icon"><i class="fa fa-volume-down"></i></div>
+                                <h3 class="service__title">Uzaktan bakım</h3>
+                                <p class="service__text">Uzaktan bakım ve ücretsiz yazılım yükseltmeleri ile ofisinize
+                                    uzaktan kurulmuş eksiksiz bir Web Sunucusu sağlayacağız.</p>
+                            </div><!-- End / service -->
+
+                        </div>
+                        <div class="col-lg-6 ">
+
+                            <!-- service -->
+                            <div class="service">
+                                <div class="service__icon"><i class="fa fa-superscript"></i></div>
+                                <h3 class="service__title">Fiyatlandırma</h3>
+                                <p class="service__text">Cihazlarımız coğrafi sınırlama, SMS, GPRS ve Web izlemeyi
+                                    destekler. Ayrıca insanlar ve motorsikletler için GPS takip cihazları üretiyoruz</p>
+                            </div><!-- End / service -->
+
+                        </div>
+                        <div class="col-lg-6 ">
+
+                            <!-- service -->
+                            <div class="service">
+                                <div class="service__icon"><i class="fa fa-sign-language"></i></div>
+                                <h3 class="service__title">Kargo Takibi</h3>
+                                <p class="service__text"> iTrackPro Container, kargo veya paket takibine izin verir ve
+                                    gömülü GPS ve GSM antenlerine sahiptir, uzun şarj süresi vardır.</p>
+                            </div><!-- End / service -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End / Section -->
+
+
+        <!-- Section -->
+        <section class="awe-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 ">
+
+                        <!-- title -->
+                        <div class="title title__left">
+                            <h2 class="title__title"><span class='first'>Biz Kimiz?</span><br/>AVL nedir?
+                                <p class="title__text"></p>
+                            </h2>
+                        </div><!-- End / title -->
+
+                        <p class="fz-16">AVL (Otomatik Araç Konumu). Enlem ve Boylam koordinatları ile araç pozisyonu
+                            oluşturmak için kullanılan bir sistemdir. Bunun için GPS teknolojisini (Küresel
+                            Konumlandırma Sistemi) kullanır; genellikle bu koordinatlar gerçek zamanlı olarak veya
+                            sonradan üsse iletilir, bir iletişim arayüzü ve bir yazılıma sahip bir hesaplama ekipmanı,
+                            araç konumunun dijital bir harita üzerinde çizilmesini sağlar.</p>
+                        <p class="fz-16">Yazılım, bir zaman aralığında aracın konumu ve hızı ile ilgili raporlar
+                            verebilmektedir.</p>
+                    </div>
+                    <div class="col-lg-6 "><img
+                            src="https://previews.123rf.com/images/krisckam/krisckam1307/krisckam130700041/20732011-car-pin-pointer-on-map-location.jpg">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End / Section -->
+
+
+        <!-- Section -->
+        <section class="awe-section founder bg-gray pd-0">
+            <div class="back"></div>
+            <div class="container-fluid pd-0">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-6 col-lg-offset-6 ">
+                    <div class="box"><i class="fa fa-quote-left"></i>
+                        <p>Haritaların kullanılması gerektiğinde en iyi veya en azından en kapsamlı ve
+                            standartlaştırılmış program OziExplorer'dır. Ondan birkaç versiyon var. Kalıcı olarak
+                            kullanılabilecek, ancak bazı önemli sınırlamaları olan bir shareware ve ücretsiz, maksimum
+                            iki nokta ile yapılması gereken harita kalibrasyonu, UTM koordinatlarını kullanamaması
+                            gibi.</p>
+                        <h2>Harita Optimizasyonu</h2><span>İyileştirmeler</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End / Section -->
+
+
+        <!-- Section -->
+        <section class="awe-section" id="id-4">
+            <div class="container">
+                <div class="row">
+
+                    <!-- title -->
+                    <div class="title">
+                        <h2 class="title__title">İşimiz
+                            <p class="title__text">Eksiksiz bir araç ve kişisel takip çözümü sunuyoruz. Bu, yeni bir iş
+                                oluşturmanıza olanak tanır.
+                            </p>
+                        </h2>
+                    </div><!-- End / title -->
+
+                </div>
+                <div class="grid-css grid-css--grid" data-col-lg="3" data-col-md="2" data-col-sm="2" data-col-xs="1"
+                     data-gap="30">
+                    <div class="filter">
+                        <ul class="filter__list">
+                            <li><a href="#" data-filter="*">TÜMÜ</a></li>
+                            <li><a href="#" data-filter=".cat1">A Tipi Modeller</a></li>
+                            <li><a href="#" data-filter=".cat2">B Tipi Modeller</a></li>
+                            <li><a href="#" data-filter=".cat3">C Tipi Modeller</a></li>
+                        </ul>
+                    </div>
+                    <div class="grid__inner">
+                        <div class="grid-sizer"></div>
+                        <div class="grid-item normal cat1 cat4">
+                            <div class="grid-item__inner">
+                                <div class="grid-item__content-wrapper">
+
+                                    <!-- portfolio -->
+                                    <div class="portfolio" href="https://picsum.photos/1000/1000/?random"><a
+                                            class="portfolio__bg" href="https://picsum.photos/1000/1000/?random"
+                                            style="background-image: url('https://picsum.photos/1000/1000/?random');"
+                                            data-effect="mfp-zoom-in"><img
+                                            src="https://picsum.photos/1000/1000/?random"/></a><a class="overlay"
+                                                                                                  href="https://picsum.photos/1000/1000/?random"
+                                                                                                  data-effect="mfp-zoom-in">
+                                        <div class="portfolio__inner">
+                                            <h2>Destek</h2>
+                                            <div class="line"></div>
+                                            <p>Çoklu Seçenekler</p>
+                                        </div>
+                                    </a>
+                                    </div><!-- End / portfolio -->
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item normal cat4 cat2">
+                            <div class="grid-item__inner">
+                                <div class="grid-item__content-wrapper">
+
+                                    <!-- portfolio -->
+                                    <div class="portfolio" href="https://picsum.photos/900/900/?random"><a
+                                            class="portfolio__bg" href="https://picsum.photos/900/900/?random"
+                                            style="background-image: url('https://picsum.photos/900/900/?random');"
+                                            data-effect="mfp-zoom-in"><img src="https://picsum.photos/900/900/?random"/></a><a
+                                            class="overlay" href="https://picsum.photos/900/900/?random"
+                                            data-effect="mfp-zoom-in">
+                                        <div class="portfolio__inner">
+                                            <h2>Destek</h2>
+                                            <div class="line"></div>
+                                            <p>Profesyonel Destek</p>
+                                        </div>
+                                    </a>
+                                    </div><!-- End / portfolio -->
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item normal cat2 cat1">
+                            <div class="grid-item__inner">
+                                <div class="grid-item__content-wrapper">
+
+                                    <!-- portfolio -->
+                                    <div class="portfolio" href="https://picsum.photos/950/950/?random"><a
+                                            class="portfolio__bg" href="https://picsum.photos/950/950/?random"
+                                            style="background-image: url('https://picsum.photos/950/950/?random');"
+                                            data-effect="mfp-zoom-in"><img src="https://picsum.photos/950/950/?random"/></a><a
+                                            class="overlay" href="https://picsum.photos/950/950/?random"
+                                            data-effect="mfp-zoom-in">
+                                        <div class="portfolio__inner">
+                                            <h2>Destek</h2>
+                                            <div class="line"></div>
+                                            <p>Kullanım Kolaylığı</p>
+                                        </div>
+                                    </a>
+                                    </div><!-- End / portfolio -->
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item normal cat3 cat4 cat2">
+                            <div class="grid-item__inner">
+                                <div class="grid-item__content-wrapper">
+
+                                    <!-- portfolio -->
+                                    <div class="portfolio" href="https://picsum.photos/1050/1050/?random"><a
+                                            class="portfolio__bg" href="https://picsum.photos/1050/1050/?random"
+                                            style="background-image: url('https://picsum.photos/1050/1050/?random');"
+                                            data-effect="mfp-zoom-in"><img
+                                            src="https://picsum.photos/1050/1050/?random"/></a><a class="overlay"
+                                                                                                  href="https://picsum.photos/1050/1050/?random"
+                                                                                                  data-effect="mfp-zoom-in">
+                                        <div class="portfolio__inner">
+                                            <h2>Destek</h2>
+                                            <div class="line"></div>
+                                            <p>Kolay Kurulum</p>
+                                        </div>
+                                    </a>
+                                    </div><!-- End / portfolio -->
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item normal">
+                            <div class="grid-item__inner">
+                                <div class="grid-item__content-wrapper">
+
+                                    <!-- portfolio -->
+                                    <div class="portfolio" href="https://picsum.photos/1100/1100/?random"><a
+                                            class="portfolio__bg" href="https://picsum.photos/1100/1100/?random"
+                                            style="background-image: url('https://picsum.photos/1100/1100/?random');"
+                                            data-effect="mfp-zoom-in"><img
+                                            src="https://picsum.photos/1100/1100/?random"/></a><a class="overlay"
+                                                                                                  href="https://picsum.photos/1100/1100/?random"
+                                                                                                  data-effect="mfp-zoom-in">
+                                        <div class="portfolio__inner">
+                                            <h2>Destek</h2>
+                                            <div class="line"></div>
+                                            <p>Anında Geri Ödeme</p>
+                                        </div>
+                                    </a>
+                                    </div><!-- End / portfolio -->
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item normal cat1 cat4 cat3">
+                            <div class="grid-item__inner">
+                                <div class="grid-item__content-wrapper">
+
+                                    <!-- portfolio -->
+                                    <div class="portfolio" href="https://picsum.photos/1200/1200/?random"><a
+                                            class="portfolio__bg" href="https://picsum.photos/1200/1200/?random"
+                                            style="background-image: url('https://picsum.photos/1200/1200/?random');"
+                                            data-effect="mfp-zoom-in"><img
+                                            src="https://picsum.photos/1200/1200/?random"/></a><a class="overlay"
+                                                                                                  href="https://picsum.photos/1200/1200/?random"
+                                                                                                  data-effect="mfp-zoom-in">
+                                        <div class="portfolio__inner">
+                                            <h2>Destek</h2>
+                                            <div class="line"></div>
+                                            <p>Uzun Ömürlü İçerik</p>
+                                        </div>
+                                    </a>
+                                    </div><!-- End / portfolio -->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End / Section -->
+
+
+        <!-- Section -->
+        <section class="awe-section numbers"
+                 style="background-image:url('../static/assets/img/bg/number.jpg');background-attachment:fixed;">
+            <div class="awe-overlay" style="background-color:#000;opacity:0.75;"></div>
+            <div class="container">
+                <div class="col-lg-3 ">
+                    <div>
+
+                        <!-- countTo_module -->
+                        <div class="countTo_module" data-options='{"from":0,"to":365}'>
+                            <div class="countTo__icon"><i class="pe-7s-settings"></i></div>
+                            <span class="countTo__number main-color"></span>
+                            <h3 class="countTo__title">Saatlik Olumlu Dönüş</h3>
+                        </div><!-- End / countTo_module -->
+
+                    </div>
+                </div>
+                <div class="col-lg-3 ">
+                    <div>
+
+                        <!-- countTo_module -->
+                        <div class="countTo_module" data-options='{"from":0,"to":385}'>
+                            <div class="countTo__icon"><i class="pe-7s-bookmarks"></i></div>
+                            <span class="countTo__number main-color"></span>
+                            <h3 class="countTo__title">Dakikalık Ortalama Satış</h3>
+                        </div><!-- End / countTo_module -->
+
+                    </div>
+                </div>
+                <div class="col-lg-3 ">
+                    <div>
+
+                        <!-- countTo_module -->
+                        <div class="countTo_module" data-options='{"from":0,"to":932}'>
+                            <div class="countTo__icon"><i class="pe-7s-more"></i></div>
+                            <span class="countTo__number main-color"></span>
+                            <h3 class="countTo__title">Açılan Şube</h3>
+                        </div><!-- End / countTo_module -->
+
+                    </div>
+                </div>
+                <div class="col-lg-3 ">
+                    <div>
+
+                        <!-- countTo_module -->
+                        <div class="countTo_module" data-options='{"from":0,"to":367}'>
+                            <div class="countTo__icon"><i class="pe-7s-video"></i></div>
+                            <span class="countTo__number main-color"></span>
+                            <h3 class="countTo__title">Destek Olunan Kurum</h3>
+                        </div><!-- End / countTo_module -->
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End / Section -->
+
+
+        <!-- Section -->
+        <section class="awe-section awe-text-center">
+            <div class="container">
+                <div class="row">
+
+                    <!-- title -->
+                    <div class="title">
+                        <h2 class="title__title"><span class='first'>Mükemmel Ekip</span><br/>Üyelerimiz
+                            <p class="title__text">Dünden Bugüne Destek Olanlar ve Sıfırdan İnşa Sürecinde Yanımda Olan
+                                İş Ortaklarım</p>
+                        </h2>
+                    </div><!-- End / title -->
+
+
+                    <!-- swiper__module swiper-container -->
+                    <div class="swiper__module swiper-container"
+                         data-options='{"slidesPerView":3,"slidesPerColumn":1,"spaceBetween":40,"breakpoints":{"320":{"slidesPerView":1,"spaceBetween":10},"640":{"slidesPerView":1,"spaceBetween":20},"768":{"slidesPerView":2,"spaceBetween":30},"1024":{"slidesPerView":3,"spaceBetween":40}}}'>
+                        <div class="swiper-wrapper">
+
+                            <!-- team -->
+                            <div class="team">
+                                <div class="team__avatar"><img
+                                        src="https://img.vectorfair.com/JEMA-FAMO/JEMA%20FAMO%20124%20261018/TM_JEMA%20FAMO%20124-86.jpg"/>
+                                    <div class="team__overlay">
+                                        <div class="team__social">
+
+                                            <!-- social-icon -->
+                                            <a class="social-icon" href="#"><i
+                                                    class="social-icon__icon fa fa-facebook"></i>
+                                            </a><!-- End / social-icon -->
+
+
+                                            <!-- social-icon -->
+                                            <a class="social-icon" href="#"><i
+                                                    class="social-icon__icon fa fa-twitter"></i>
+                                            </a><!-- End / social-icon -->
+
+
+                                            <!-- social-icon -->
+                                            <a class="social-icon" href="#"><i
+                                                    class="social-icon__icon fa fa-google-plus"></i>
+                                            </a><!-- End / social-icon -->
+
+
+                                            <!-- social-icon -->
+                                            <a class="social-icon" href="#"><i class="social-icon__icon fa fa-rss"></i>
+                                            </a><!-- End / social-icon -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="team__name">Ersin Yılmaz Aslan</h3><span class="team__work">Ceo</span>
+                                <p class="team__text">Başarmak en kolay kısmıydı...</p>
+                            </div><!-- End / team -->
+
+
+                            <!-- team -->
+                            <div class="team">
+                                <div class="team__avatar"><img
+                                        src="https://t4.ftcdn.net/jpg/02/78/70/99/360_F_278709964_PhS3MsOE9udVYb5VCin1xCQJlm3HFb9V.jpg"/>
+                                    <div class="team__overlay">
+                                        <div class="team__social">
+
+                                            <!-- social-icon -->
+                                            <a class="social-icon" href="#"><i
+                                                    class="social-icon__icon fa fa-facebook"></i>
+                                            </a><!-- End / social-icon -->
+
+
+                                            <!-- social-icon -->
+                                            <a class="social-icon" href="#"><i
+                                                    class="social-icon__icon fa fa-twitter"></i>
+                                            </a><!-- End / social-icon -->
+
+
+                                            <!-- social-icon -->
+                                            <a class="social-icon" href="#"><i
+                                                    class="social-icon__icon fa fa-google-plus"></i>
+                                            </a><!-- End / social-icon -->
+
+
+                                            <!-- social-icon -->
+                                            <a class="social-icon" href="#"><i class="social-icon__icon fa fa-rss"></i>
+                                            </a><!-- End / social-icon -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="team__name">F. Betül İnan</h3><span class="team__work">Geliştirici</span>
+                                <p class="team__text">Aslında en kolay kısmı inanmaktı.</p>
+                            </div><!-- End / team -->
+
+
+                            <!-- team -->
+                            <div class="team">
+                                <div class="team__avatar"><img
+                                        src="https://static.vecteezy.com/system/resources/previews/004/899/686/non_2x/a-beautiful-woman-with-red-hair-and-a-fashionable-hairstyle-sexy-girl-with-makeup-portrait-of-a-woman-for-an-avatar-vector.jpg"/>
+                                    <div class="team__overlay">
+                                        <div class="team__social">
+
+                                            <!-- social-icon -->
+                                            <a class="social-icon" href="#"><i
+                                                    class="social-icon__icon fa fa-facebook"></i>
+                                            </a><!-- End / social-icon -->
+
+
+                                            <!-- social-icon -->
+                                            <a class="social-icon" href="#"><i
+                                                    class="social-icon__icon fa fa-twitter"></i>
+                                            </a><!-- End / social-icon -->
+
+
+                                            <!-- social-icon -->
+                                            <a class="social-icon" href="#"><i
+                                                    class="social-icon__icon fa fa-google-plus"></i>
+                                            </a><!-- End / social-icon -->
+
+
+                                            <!-- social-icon -->
+                                            <a class="social-icon" href="#"><i class="social-icon__icon fa fa-rss"></i>
+                                            </a><!-- End / social-icon -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="team__name">Derin Aden</h3><span
+                                    class="team__work">Kalite Kontrol Sorumlusu</span>
+                                <p class="team__text">Ben olmasam muhtemelen olmazdı.</p>
+                            </div><!-- End / team -->
+
+
+                            <!-- team -->
+                            <div class="team">
+                                <div class="team__avatar"><img
+                                        src="https://thumbs.dreamstime.com/b/illustration-adult-male-face-shape-style-cute-cartoon-object-isolated-white-background-cartoon-male-face-gray-181777851.jpg"/>
+                                    <div class="team__overlay">
+                                        <div class="team__social">
+
+                                            <!-- social-icon -->
+                                            <a class="social-icon" href="#"><i
+                                                    class="social-icon__icon fa fa-facebook"></i>
+                                            </a><!-- End / social-icon -->
+
+
+                                            <!-- social-icon -->
+                                            <a class="social-icon" href="#"><i
+                                                    class="social-icon__icon fa fa-twitter"></i>
+                                            </a><!-- End / social-icon -->
+
+
+                                            <!-- social-icon -->
+                                            <a class="social-icon" href="#"><i
+                                                    class="social-icon__icon fa fa-google-plus"></i>
+                                            </a><!-- End / social-icon -->
+
+
+                                            <!-- social-icon -->
+                                            <a class="social-icon" href="#"><i class="social-icon__icon fa fa-rss"></i>
+                                            </a><!-- End / social-icon -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="team__name">Kinto Sparrow</h3><span class="team__work">Satış Sorumlusu</span>
+                                <p class="team__text">Maaşım yattığı sürece gerisinin önemi yok.</p>
+                            </div><!-- End / team -->
+
+                        </div>
+                        <div class="swiper-pagination-custom"></div>
+                    </div><!-- End / swiper__module swiper-container -->
+
+                </div>
+            </div>
+        </section>
+        <!-- End / Section -->
+
+
+        <!-- Section -->
+        <section class="awe-section bg-gray">
+            <div class="container">
+                <div class="row">
+
+                    <!-- title -->
+                    <div class="title">
+                        <h2 class="title__title"><span class='first'>Ürünleri Görün</span><br/>Fiyatlar
+                            <p class="title__text">Piyasa Fiyatlarının Altında Yarı Yolda Bırakmayan Ürünler</p>
+                        </h2>
+                    </div><!-- End / title -->
+
+                    <div class="col-lg-4 ">
+
+                        <!-- pricing-01__element -->
+                        <div class="pricing-01__element wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s"
+                             data-wow-offset="20" data-wow-iteration="1"><span></span>
+                            <header class="pricing-01__header">
+                                <div class="pricing-01__icon"><i class="pe-7s-film"></i></div>
+                                <h2 class="pricing-01__title">TAŞINABİLİR</h2>
+                            </header>
+                            <div class="pricing-01__body"><span class="pricing-01__price"><span
+                                    class="pricing-01__currency">$</span><span class="pricing-01__amount">45</span><span
+                                    class="pricing-01__period">mo</span>
+											<p class="pricing-01__words">Gerçek zamanlı olarak insan takibi ve konumu için özel olarak geliştirilmiş</p></span>
+                                <ul class="pricing-01__list">
+                                    <li><i class="fa fa-check"></i>GSM</li>
+                                    <li><i class="fa fa-check"></i>AŞIRI HIZ</li>
+                                    <li><i class="fa fa-check"></i>DÖRT BANTLI</li>
+                                    <li><i class="fa fa-check"></i>COĞRAFİ SINIR</li>
+                                    <li class="disable"><i class="fa fa-close"></i>VERİ KAYDEDİCİ</li>
+                                    <li class="disable"><i class="fa fa-close"></i>DİNAMİK RAPOR</li>
+                                </ul>
+                            </div>
+                            <footer class="pricing-01__footer"><a class="a-btn style-2" href="#">HEMEN AL</a></footer>
+                        </div><!-- End / pricing-01__element -->
+
+                    </div>
+                    <div class="col-lg-4 ">
+
+                        <!-- pricing-01__element -->
+                        <div class="pricing-01__element wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s"
+                             data-wow-offset="20" data-wow-iteration="1">
+                            <div class="pricing-01__shape">
+                                <p>Popüler/p>
+                            </div>
+                            <header class="pricing-01__header">
+                                <div class="pricing-01__icon"><i class="pe-7s-back-2"></i></div>
+                                <h2 class="pricing-01__title">AVCI</h2>
+                            </header>
+                            <div class="pricing-01__body"><span class="pricing-01__price"><span
+                                    class="pricing-01__currency">$</span><span class="pricing-01__amount">77</span><span
+                                    class="pricing-01__period">mo</span>
+											<p class="pricing-01__words">Gerçek zamanlı olarak araç takibi ve filo yönetimi için geliştirilmiş</p></span>
+                                <ul class="pricing-01__list">
+                                    <li><i class="fa fa-check"></i>VERİ KAYDEDİCİ</li>
+                                    <li><i class="fa fa-check"></i>DÖRT BANTLI</li>
+                                    <li><i class="fa fa-check"></i>AŞIRI HIZ</li>
+                                    <li><i class="fa fa-check"></i>DİNAMİK RAPOR</li>
+                                    <li class="disable"><i class="fa fa-close"></i>GSM</li>
+                                    <li class="disable"><i class="fa fa-close"></i>COĞRAFİ SINIR</li>
+                                </ul>
+                            </div>
+                            <footer class="pricing-01__footer"><a class="a-btn style-2" href="#">HEMEN AL</a></footer>
+                        </div><!-- End / pricing-01__element -->
+
+                    </div>
+                    <div class="col-lg-4 ">
+
+                        <!-- pricing-01__element -->
+                        <div class="pricing-01__element wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"
+                             data-wow-offset="20" data-wow-iteration="1"><span></span>
+                            <header class="pricing-01__header">
+                                <div class="pricing-01__icon"><i class="pe-7s-graph2"></i></div>
+                                <h2 class="pricing-01__title">VLogic</h2>
+                            </header>
+                            <div class="pricing-01__body"><span class="pricing-01__price"><span
+                                    class="pricing-01__currency">$</span><span class="pricing-01__amount">99</span><span
+                                    class="pricing-01__period">mo</span>
+											<p class="pricing-01__words">Gerçek zamanlı olarak motosiklet takibi ve konumu için özel olarak geliştirilmiş</p></span>
+                                <ul class="pricing-01__list">
+                                    <li><i class="fa fa-check"></i>DÖRT BANTLI</li>
+                                    <li><i class="fa fa-check"></i>VERİ KAYDEDİCİ</li>
+                                    <li><i class="fa fa-check"></i>AŞIRI HIZ</li>
+                                    <li><i class="fa fa-check"></i>GSM</li>
+                                    <li class="disable"><i class="fa fa-close"></i>COĞRAFİ SINIR</li>
+                                    <li class="disable"><i class="fa fa-close"></i>DİNAMİK RAPOR</li>
+                                </ul>
+                            </div>
+                            <footer class="pricing-01__footer"><a class="a-btn style-2" href="#">HEMEN AL</a></footer>
+                        </div><!-- End / pricing-01__element -->
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End / Section -->
+
+
+        <!-- Section -->
+        <section class="awe-section awe-text-center" id="id-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <!-- title -->
+                        <div class="title">
+                            <h2 class="title__title">Blogumuz
+                                <p class="title__text">GPS Araç Takip Sistemini Neden Hemen Almanız Gerektiğine Dair Her
+                                    Şey.</p>
+                            </h2>
+                        </div><!-- End / title -->
+
+                    </div>
+                </div>
+                <div class="row">
+
+                    <!-- swiper__module swiper-container -->
+                    <div class="swiper__module swiper-container"
+                         data-options='{"slidesPerView":3,"slidesPerColumn":1,"breakpoints":{"320":{"slidesPerView":1,"spaceBetween":10},"640":{"slidesPerView":1,"spaceBetween":20},"768":{"slidesPerView":2,"spaceBetween":30},"1024":{"slidesPerView":3,"spaceBetween":40}}}'>
+                        <div class="swiper-wrapper">
+
+                            <!-- post -->
+                            <div class="post">
+                                <div class="post__media"><a href="#"><img src="../static/assets/img/blog/1.jpg" alt=""/></a>
+                                </div>
+                                <div>
+                                    <div class="post__meta"><span class="author">Elon Musk Tarafından</span><span
+                                            class="cat"><i class='fa fa-tag'></i> CEO</span><span class="comment"><i
+                                            class='fa fa-comment'></i> 7 Comments</span></div>
+                                    <h2 class="post__title"><a href="#">GPS Takip Sistemi Neden Önemli?</a></h2>
+                                    <p class="post__text">Günümüzde her aletin yerini teknolojik versiyonuna
+                                        devretmesiyle bazı önderlerin teşvikleriyle bir teknoloji akımı üretilm...</p><a
+                                        class="a-btn style-2" href="#">Daha fazla oku</a>
+                                </div>
+                            </div><!-- End / post -->
+
+
+                            <!-- post -->
+                            <div class="post">
+                                <div class="post__media"><a href="#"><img src="../static/assets/img/blog/2.jpg" alt=""/></a>
+                                </div>
+                                <div>
+                                    <div class="post__meta"><span class="author">Frank Sinatra Tarafından</span><span
+                                            class="cat"><i class='fa fa-tag'></i> Sanatçı</span><span class="comment"><i
+                                            class='fa fa-comment'></i> 7 Comments</span></div>
+                                    <h2 class="post__title"><a href="#">Klip Çekimine Gidecektim...</a></h2>
+                                    <p class="post__text">Arabalara ne kadar düşkün olduğumu bilirsiniz, dönemimde
+                                        teknoloji böylesine ilerlemiş olsaydı emin olun ben de birer tane alırdım...</p>
+                                    <a class="a-btn style-2" href="#">Daha fazla oku</a>
+                                </div>
+                            </div><!-- End / post -->
+
+
+                            <!-- post -->
+                            <div class="post">
+                                <div class="post__media"><a href="#"><img src="../static/assets/img/blog/3.jpg" alt=""/></a>
+                                </div>
+                                <div>
+                                    <div class="post__meta"><span
+                                            class="author">Reşat N. Gültekin Tarafından</span><span class="cat"><i
+                                            class='fa fa-tag'></i> Yazar</span><span class="comment"><i
+                                            class='fa fa-comment'></i> 7 Comments</span></div>
+                                    <h2 class="post__title"><a href="#">Motorsiklet ve İnsan Konumu İle
+                                        Özelleştirme...</a></h2>
+                                    <p class="post__text">Şaka yapıyorsunuz herhalde?...</p><a class="a-btn style-2"
+                                                                                               href="#">Daha fazla
+                                    oku</a>
+                                </div>
+                            </div><!-- End / post -->
+
+
+                        </div>
+                        <div class="swiper-pagination-custom"></div>
+                    </div><!-- End / swiper__module swiper-container -->
+
+                </div>
+            </div>
+        </section>
+        <!-- End / Section -->
+
+
+        <!-- Section -->
+        <section class="awe-section" id="id-6">
+            <div class="container">
+
+                <!-- title -->
+                <div class="title">
+                    <h2 class="title__title"><span class='first'>Bize Ulaşın</span><br/>Bağlantı Kurun
+                        <p class="title__text">Aracınız kendi başına gezintiye çıkamaz, içinize düşen her kuşkuda bize
+                            ulaşın.</p>
+                    </h2>
+                </div><!-- End / title -->
+
+                <div class="row">
+                    <div class="mb-40 text-center">
+                        <div class="col-lg-4 ">
+
+                            <!-- contact -->
+                            <div class="contact">
+                                <div class="contact__item"><span class="contact__icon"><i class='fa fa-pied-piper'></i></span>
+                                    <h3 class="contact__title">Address</h3>
+                                    <div>Kocaeli Üniversitesi/Umuttepe</div>
+                                </div>
+                            </div><!-- End / contact -->
+
+                        </div>
+                        <div class="col-lg-4 ">
+
+                            <!-- contact -->
+                            <div class="contact">
+                                <div class="contact__item"><span class="contact__icon"><i
+                                        class='fa fa-cloud-upload'></i></span>
+                                    <h3 class="contact__title">Email</h3>
+                                    <div><a href="">190202115@kocaeli.edu.tr</a></div>
+                                </div>
+                            </div><!-- End / contact -->
+
+                        </div>
+                        <div class="col-lg-4 ">
+
+                            <!-- contact -->
+                            <div class="contact">
+                                <div class="contact__item"><span class="contact__icon"><i class='fa fa-ils'></i></span>
+                                    <h3 class="contact__title">Phone</h3>
+                                    <div>0544*******</div>
+                                </div>
+                            </div><!-- End / contact -->
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 ">
+                        <div class="form-wrapper">
+
+                            <!-- form-item -->
+                            <div class="form-item">
+                                <label class="form__label fa fa-user"> </label>
+                                <input class="form-control" type="text" name="input" placeholder="Name"
+                                       required="required"/>
+                            </div><!-- End / form-item -->
+
+
+                            <!-- form-item -->
+                            <div class="form-item form-item--half">
+                                <label class="form__label fa fa-envelope-o"> </label>
+                                <input class="form-control" type="text" name="input" placeholder="Email"/>
+                            </div><!-- End / form-item -->
+
+
+                            <!-- form-item -->
+                            <div class="form-item form-item--half">
+                                <label class="form__label fa fa-edit"> </label>
+                                <input class="form-control" type="text" name="input" placeholder="Subject"/>
+                            </div><!-- End / form-item -->
+
+
+                            <!-- form-item -->
+                            <div class="form-item">
+                                <label class="form__label fa fa-comments-o"> </label>
+                                <textarea class="form-control" placeholder="Message" rows="15"></textarea>
+                            </div><!-- End / form-item -->
+
+
+                            <!-- form-item -->
+                            <div class="form-item awe-text-center">
+                                <a class="awe-btn awe-btn--pill " href="#">Send message
+                                </a>
+                            </div><!-- End / form-item -->
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ">
+                        <div class="box-map"></div>
+                        <div style="width: 100%">
+                            <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0"
+                                    marginwidth="0"
+                                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=40.8222134,29.921675+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                                <a href="https://www.gps.ie/truck-gps/">fleet tracking gps</a></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End / Section -->
+
+    </div>
+    <!-- End / Content-->
+
+    <!-- footer -->
+    <div class="footer">
+        <div id="back-to-top"><i class="fa fa-angle-up"></i></div>
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="footer__social">
+
+                    <!-- social-icon -->
+                    <a class="social-icon" href="#"><i class="social-icon__icon fa fa-facebook"></i>
+                    </a><!-- End / social-icon -->
+
+
+                    <!-- social-icon -->
+                    <a class="social-icon" href="#"><i class="social-icon__icon fa fa-twitter"></i>
+                    </a><!-- End / social-icon -->
+
+
+                    <!-- social-icon -->
+                    <a class="social-icon" href="#"><i class="social-icon__icon fa fa-google-plus"></i>
+                    </a><!-- End / social-icon -->
+
+
+                    <!-- social-icon -->
+                    <a class="social-icon" href="https://github.com/Kinto2517" target="_blank"><i
+                            class="social-icon__icon fa fa-github"></i>
+                    </a><!-- End / social-icon -->
+
+                </div>
+            </div>
+        </div>
+    </div><!-- End / footer -->
+
+</div>
+<!-- Vendors-->
+<script type="text/javascript" src="../static/assets/vendors/_jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/imagesloaded/imagesloaded.pkgd.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/isotope-layout/isotope.pkgd.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/jquery-one-page/jquery.nav.min.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/jquery.easing/jquery.easing.min.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/jquery.matchHeight/jquery.matchHeight.min.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/masonry-layout/masonry.pkgd.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/swiper/swiper.jquery.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/menu/menu.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/jquery.countTo/jquery.countTo.min.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/jquery.waypoints/jquery.waypoints.min.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/tabs/awe-tabs.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/wow/wow.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/jquery.appear/jquery.appear.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/waterpipe/waterpipe.js"></script>
+<!-- App-->
+<script type="text/javascript" src="../static/assets/js/main.js"></script>
+</body>
+</html>

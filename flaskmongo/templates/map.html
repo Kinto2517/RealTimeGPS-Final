@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="60">
+    {% if username == usercars[0].user_name %}
+        <script>
+            var carid1 = {{ usercars[0].car_id }};
+            var carid2 = {{ usercars[1].car_id }};
+
+        </script>
+    {% elif username == usercars[2].user_name %}
+        <script>
+            var carid1 = {{ usercars[2].car_id }};
+            var carid2 = {{ usercars[3].car_id }};
+        </script>
+    {% endif %}
+
+    <link rel="stylesheet" type="text/css" href="../static/assets/fonts/fontawesome/font-awesome.min.css">
+    <!-- Vendors-->
+    <link rel="stylesheet" type="text/css" href="../static/assets/vendors/bootstrap/grid.css">
+    <link rel="stylesheet" type="text/css" href="../static/assets/vendors/magnific-popup/magnific-popup.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/assets/vendors/swiper/swiper.css">
+    <link rel="stylesheet" type="text/css" href="../static/assets/vendors/wow/animate.css">
+    <!-- App & fonts-->
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Montserrat:400,700">
+    <link rel="stylesheet" type="text/css" id="app-stylesheet" href="../static/assets/css/main.css">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+
+    <title>Güncel Araç Konumları</title>
+</head>
+
+<body>
+
+<!-- header -->
+<header class="header ">
+    <div class="container">
+        <div class="header__inner">
+            <div class="header__logo"><a href="{{ url_for('home') }}">AFirması GPS</a></div>
+            <div class="header__menu">
+
+                <!-- onepage-nav -->
+                <nav class="onepage-nav">
+
+                    <!-- onepage-menu -->
+                    <ul class="onepage-menu">
+                        <li class="current-menu-item"><a href="{{ url_for('home') }}">Anasayfa</a>
+                        </li>
+                        <li><a href="{{ url_for('map') }}">Araçların Canlı Gösterimi</a>
+                        </li>
+                        <li><a href="{{ url_for('map2') }}">Araç Seçin</a>
+                        </li>
+                        {% if current_user.is_authenticated %}
+                            <li><a href="{{ url_for('logout') }}" class="smoothScroll">Logout</a></li>
+                        {% else %}
+                            <li><a href="{{ url_for('login') }}" class="smoothScroll">Login</a></li>
+                        {% endif %}
+                    </ul><!-- onepage-menu -->
+
+                    <div class="navbar-toggle"><span></span><span></span><span></span></div>
+                </nav><!-- End / onepage-nav -->
+
+            </div>
+        </div>
+    </div>
+</header><!-- End / header -->
+
+<div>
+    <div>
+        <h2 class="awe-text-center">Hoşgeldiniz {{ username }}, araçlarınızı aşağıda inceleyebilirsiniz.</h2>
+        <h1 style="color: black"></h1>
+    </div>
+    <div>
+        <span class="center-block"></span>
+        <span id="map" class="center-block" style="height: 600px; width: 800px;">
+        </span>
+    </div>
+    <div class="awe-text-center social-icon__text" style="color: black;">
+        <br>
+        <button class="awe-btn--pill" onclick="fullScreen()">
+            Tam Ekran
+        </button>
+    </div>
+</div>
+{% if username == usercars[0].user_name %}
+    <script src="../static/leaf.js"></script>
+{% elif username == usercars[3].user_name %}
+    <script src="../static/leaf1.js"></script>
+{% else %}
+
+{% endif %}
+
+<div style="color: white">
+    ...
+</div>
+<div style="color: white">
+    ...
+</div>
+
+<!-- footer -->
+<div class="footer">
+    <div id=""><i class="fa"></i></div>
+    <div class="container">
+        <div class="footer__wrapper">
+            <div class="footer__social">
+                <!-- social-icon -->
+                <a class="social-icon" href="#"><i class="social-icon__icon fa fa-facebook"></i>
+                </a><!-- End / social-icon -->
+
+
+                <!-- social-icon -->
+                <a class="social-icon" href="#"><i class="social-icon__icon fa fa-twitter"></i>
+                </a><!-- End / social-icon -->
+
+
+                <!-- social-icon -->
+                <a class="social-icon" href="#"><i class="social-icon__icon fa fa-google-plus"></i>
+                </a><!-- End / social-icon -->
+
+
+                <!-- social-icon -->
+                <a class="social-icon" href="https://github.com/Kinto2517" target="_blank"><i
+                        class="social-icon__icon fa fa-github"></i>
+                </a><!-- End / social-icon -->
+
+            </div>
+        </div>
+    </div>
+</div><!-- End / footer -->
+
+{#<script>#}
+{#    var mymap = L.map('map').setView([59.410303639870264, 17.927824509714338], 13);#}
+{##}
+{#    var roads = L.gridLayer#}
+{#        .googleMutant({#}
+{#            type: "roadmap", // valid values are 'roadmap', 'satellite', 'terrain' and 'hybrid'#}
+{#        })#}
+{#        .addTo(mymap);#}
+{#</script>#}
+
+
+<!-- Vendors-->
+<script type="text/javascript" src="../static/assets/vendors/_jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/imagesloaded/imagesloaded.pkgd.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/isotope-layout/isotope.pkgd.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/jquery-one-page/jquery.nav.min.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/jquery.easing/jquery.easing.min.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/jquery.matchHeight/jquery.matchHeight.min.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/masonry-layout/masonry.pkgd.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/swiper/swiper.jquery.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/menu/menu.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/jquery.countTo/jquery.countTo.min.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/jquery.waypoints/jquery.waypoints.min.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/tabs/awe-tabs.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/wow/wow.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/jquery.appear/jquery.appear.js"></script>
+<script type="text/javascript" src="../static/assets/vendors/waterpipe/waterpipe.js"></script>
+<!-- App-->
+<script type="text/javascript" src="../static/assets/js/main.js"></script>
+
+</body>
+</html>
